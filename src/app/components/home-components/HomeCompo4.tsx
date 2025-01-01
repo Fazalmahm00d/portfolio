@@ -11,6 +11,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel"
 import Modal from "../animata/overlay/modal"
+import useWindowResize from "../reused-components/useWindowResize"
 
 const proj1details={
   projectname:"TOTC",
@@ -49,8 +50,12 @@ function HomeCompo4(){
         setCurrent(api.selectedScrollSnap() + 1)
       })
     }, [api])
+    const windowWidth = useWindowResize();
+    console.log(windowWidth,"window width")
+    const isSmallScreen = windowWidth < 1024; // Tailwind's `sm` breakpoint is typically 640px
+    const isLargeScreen = windowWidth >= 1024;
     return(
-        <div className=" h-[80vh] md:h-[120vh] 2xl:h-screen bg-[#1A1E23] relative flex overflow-hidden">
+        <div className=" min-h-screen 2xl:h-screen bg-[#1A1E23] relative flex overflow-hidden">
          <img src="/bgimage2.png" className=" relative top-0 h-full w-fit"/>
          <img src="/bgimage2.png" className=" relative top-0 h-full"/>
          <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
@@ -79,33 +84,37 @@ function HomeCompo4(){
                 align: "start",
                 loop: true,
             }}
-            className=" w-64 md:w-[600px] 2xl:w-[900px] "
+            className=" w-[250px] md:w-[600px] 2xl:w-[900px] h-full "
             >
-        <CarouselContent >
-                <CarouselItem className="">
-                  <img src="/container.png" className="relative  "/>
-                  <div className="absolute  top-30 left-10 z-50  mono text-2xl border-b-4 border-white"> 
-                    <Modal  details={proj1details}/>
-                    <div className="absolute z-20 right-[-30px] bottom-0"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.00315 1.82137C2.75379 1.71748 2.46638 1.77435 2.27536 1.96536C2.08434 2.15638 2.02748 2.44379 2.13137 2.69315L6.8447 14.0065C6.95136 14.2625 7.20536 14.4257 7.48253 14.4164C7.75971 14.4071 8.00216 14.2271 8.09135 13.9645L9.41996 10.0528L12.942 13.5748C13.2024 13.8352 13.6245 13.8352 13.8848 13.5748C14.1452 13.3145 14.1452 12.8924 13.8848 12.632L10.3628 9.10996L14.2745 7.78135C14.5371 7.69216 14.7171 7.44971 14.7264 7.17254C14.7357 6.89536 14.5725 6.64136 14.3165 6.53471L3.00315 1.82137ZM7.39659 11.8641L3.98473 3.67474L12.1741 7.08659L8.91903 8.19218C8.72286 8.25881 8.56881 8.41286 8.50218 8.60903L7.39659 11.8641Z" fill="#12F7D6"/>
-                    </svg>
-                    </div>
-                </div>
+        <CarouselContent className="h-full">
+                <CarouselItem className="relative w-full h-auto">
+                  <img src="/container.png" className="w-full h-auto object-contain" />
+                  <div className="mono text-2xl border-b-4 p-8  border-white w-full"> 
+                    <Modal   details={proj1details}/>
+                    
+                  </div>
                 </CarouselItem>
-                <CarouselItem >
-                  <img src="/container.png" className="relative"/>
-                  <div className="absolute  top-20 right-10 z-50  mono text-2xl border-b-4 border-white"> 
-                    <Modal  details={proj2details}/>
-                    <div className="absolute z-20 right-[-30px] bottom-0"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.00315 1.82137C2.75379 1.71748 2.46638 1.77435 2.27536 1.96536C2.08434 2.15638 2.02748 2.44379 2.13137 2.69315L6.8447 14.0065C6.95136 14.2625 7.20536 14.4257 7.48253 14.4164C7.75971 14.4071 8.00216 14.2271 8.09135 13.9645L9.41996 10.0528L12.942 13.5748C13.2024 13.8352 13.6245 13.8352 13.8848 13.5748C14.1452 13.3145 14.1452 12.8924 13.8848 12.632L10.3628 9.10996L14.2745 7.78135C14.5371 7.69216 14.7171 7.44971 14.7264 7.17254C14.7357 6.89536 14.5725 6.64136 14.3165 6.53471L3.00315 1.82137ZM7.39659 11.8641L3.98473 3.67474L12.1741 7.08659L8.91903 8.19218C8.72286 8.25881 8.56881 8.41286 8.50218 8.60903L7.39659 11.8641Z" fill="#12F7D6"/>
-                    </svg>
-                    </div>
+                <CarouselItem className="relative  w-full h-auto" >
+                <img
+                  src="/container.png"
+                  className="w-full h-auto object-contain"
+                  alt="Responsive Image"
+                />
+                  <div className="  mono text-2xl border-b-4 border-white"> 
+    
+                    {isSmallScreen ? (
+                      <Modal modalSize="sm"  details={proj2details}/>
+                    ) : isLargeScreen ? (
+                      <Modal modalSize="lg"  details={proj2details}/>
+                    ) : (
+                      <Modal details={proj2details}/>
+                    )}
                   </div>
                 </CarouselItem>
                    
         </CarouselContent>
-        <CarouselPrevious className="w-16 h-16" />
-        <CarouselNext className="w-16 h-16"/>
+        <CarouselPrevious className="w-6 h-6 md:w-16 md:h-16" />
+        <CarouselNext className="w-6 h-6  md:w-16 md:h-16"/>
           </Carousel>
 
         </div>

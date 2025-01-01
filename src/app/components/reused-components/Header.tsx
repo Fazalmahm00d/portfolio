@@ -5,9 +5,13 @@ export default function Header() {
     <header className="bg-[#292F36]  text-white mono text-2xl p-6">
       <div className="container mx-auto flex border-b-2 border-gray-100 border-opacity-50 justify-between items-center py-10 px-6">
         
-        <div className="text-lg md:text-2xl 2xl:text-3xl font-bold font-500">
+        <div className="text-lg md:text-2xl  2xl:text-3xl font-bold font-500">
           <Link href="/">
-            <span className="text-[#12F7D6] ">{'<C/>'} </span>FazalMahmood
+          <div className="flex gap-4 items-center">
+          <span className="text-[#12F7D6] ">{'<C/>'} </span>
+          <span className="hidden md:block">FazalMahmood</span>
+          </div>
+            
           </Link>
         </div>
 

@@ -1,7 +1,7 @@
 function HomeCompo6(){
     return(
         <div className="h-[120vh] 2xl:h-screen bg-[#1A1E23] relative"> 
-        <div className=" flex flex-col w-full gap-10 items-center justify-center xl:px-40 py-10">
+        <div className=" flex flex-col w-full gap-10 items-center justify-center xl:px-40 p-10">
             <div className="hidden xl:flex flex-col items-center justify-center">
                 <svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_25_645)">
@@ -17,12 +17,12 @@ function HomeCompo6(){
 
                     <img src="/Arrow 1.png"/>
             </div>
-            <div className="flex flex-col items-center justify-center">
-                <h1 className="text-[#12F7D6]  text-6xl border-b-4 border-[#12F7D6] py-4">Contact</h1>
+            <div className="flex flex-col items-center justify-center ">
+                <h1 className="text-[#12F7D6]  text-4xl md:text-6xl border-b-4 border-[#12F7D6] py-4">Contact</h1>
                 <p className="mono mt-2 ">I’m currently available for freelance work</p>
             </div>
             <div className="flex w-full flex-col items-center justify-center mt-10">
-            <div className="text-4xl px-8 text-[#12F7D6] border-4 rounded-tl-3xl py-4 rounded-br-3xl w-fit border-[#12F7D6]">
+            <div className="text-xl md:text-4xl px-8 text-[#12F7D6] border-4 rounded-tl-3xl py-4 p-10 rounded-br-3xl w-fit border-[#12F7D6]">
                            Send Me A Message
             </div>
            <div className="w-full flex flex-col items-center px-20 gap-8 mt-10">

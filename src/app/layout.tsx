@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/reused-components/Header";
 import { IBM_Plex_Mono, Ubuntu } from "next/font/google";
+import Footer from "./components/reused-components/Footer";
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
         <Header/>
         
         {children}
+        <Footer/>
       </body>
     </html>
   );

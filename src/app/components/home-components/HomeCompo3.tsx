@@ -1,7 +1,9 @@
+import GlowingCard from "../animata/card/glowing-card"
+
 function HomeCompo3(){
     return(
-        <div className="bg-compo3-img h-[150vh] 2xl:h-screen  opacity-80 md:px-40 relative">
-            <div className="absolute flex flex-col gap-10 items-center justify-center  top-0 left-0 h-full w-full bg-[#292F36] bg-opacity-70">
+            <div className=" inset-0 min-h-screen 2xl:h-screen  opacity-80 md:px-40 relative flex flex-col gap-10 items-center justify-center bg-[#292F36] bg-opacity-70">
+                <div className="container">
             <div className="hidden 2xl:flex  flex-col items-center justify-center">
                 <svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_25_645)">
@@ -23,21 +25,23 @@ function HomeCompo3(){
             </div>
             <div className="flex flex-col gap-20 justify-center items-center">
             <div className="flex flex-col md:flex-row gap-10 md:gap-40 mono">
-                <div className="bg-[#98FAEC] flex flex-col border-l-8 rounded-md border-[#28A9E0] items-center text-black p-6">
+
+                <GlowingCard ><div className="relative bg-[#98FAEC] flex flex-col z-50 border-l-8 rounded-3xl border-[#28A9E0] items-center text-black p-6">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3335 24H26.6668C28.876 24 30.6668 22.2091 30.6668 20V6.66663C30.6668 4.45749 28.876 2.66663 26.6668 2.66663H5.3335C3.12436 2.66663 1.3335 4.45749 1.3335 6.66663V20C1.3335 22.2091 3.12436 24 5.3335 24H14.6668V26.6666H10.6668C9.93045 26.6666 9.3335 27.2636 9.3335 28C9.3335 28.7363 9.93045 29.3333 10.6668 29.3333H21.3335C22.0699 29.3333 22.6668 28.7363 22.6668 28C22.6668 27.2636 22.0699 26.6666 21.3335 26.6666H17.3335V24ZM5.3335 5.33329C4.59712 5.33329 4.00016 5.93025 4.00016 6.66663V20C4.00016 20.7363 4.59712 21.3333 5.3335 21.3333H26.6668C27.4032 21.3333 28.0002 20.7363 28.0002 20V6.66663C28.0002 5.93025 27.4032 5.33329 26.6668 5.33329H5.3335Z" fill="#292F36"/>
                     </svg>
                     <h1 className="text-2xl">Web development</h1>
                     <p>HTML·CSS·JS·REACT</p>
-                </div>
-                <div className="bg-[#98FAEC] flex flex-col border-l-8 rounded-md border-[#28A9E0] items-center text-black p-6">
+                </div></GlowingCard>
+                
+                <GlowingCard><div className="relative z-50 bg-[#98FAEC] flex flex-col border-l-8 rounded-3xl border-[#28A9E0] items-center text-black p-6">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16.0002 22.6667C15.2638 22.6667 14.6668 23.2637 14.6668 24C14.6668 24.7364 15.2638 25.3334 16.0002 25.3334H16.0135C16.7499 25.3334 17.3468 24.7364 17.3468 24C17.3468 23.2637 16.7499 22.6667 16.0135 22.6667H16.0002Z" fill="#292F36"/>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.3335 1.33337C7.12436 1.33337 5.3335 3.12423 5.3335 5.33337V26.6667C5.3335 28.8758 7.12436 30.6667 9.3335 30.6667H22.6668C24.876 30.6667 26.6668 28.8758 26.6668 26.6667V5.33337C26.6668 3.12423 24.876 1.33337 22.6668 1.33337H9.3335ZM8.00016 5.33337C8.00016 4.59699 8.59712 4.00004 9.3335 4.00004H22.6668C23.4032 4.00004 24.0002 4.59699 24.0002 5.33337V26.6667C24.0002 27.4031 23.4032 28 22.6668 28H9.3335C8.59712 28 8.00016 27.4031 8.00016 26.6667V5.33337Z" fill="#292F36"/>
                 </svg>
                 <h1 className="text-2xl">App Development</h1>
                 <p>iOS·Android</p>
-                </div>
+                </div></GlowingCard>
             </div>
             <div className="grid grid-cols-2 gap-10 2xl:flex 2xl:gap-20">
             <div className="flex flex-col items-center gap-5">
@@ -72,8 +76,8 @@ function HomeCompo3(){
             </div>
             </div>
             </div>
+            </div>
            
-        </div>
     )
 }
 

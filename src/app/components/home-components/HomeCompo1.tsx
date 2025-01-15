@@ -3,6 +3,7 @@ import { Copy, Home, Settings, Share2, SquarePen, Trash, User } from 'lucide-rea
 import Image from 'next/image';
 
 import Speeddial from '../animata/fabs/speed-dial';
+import StaggeredLetter from '../animata/text/staggered-letter';
 function HomeCompo1() {
   const handleMouseMove = (e:any) => {
     const container = document.getElementById("container"); // Fixed to get the container by ID
@@ -17,8 +18,8 @@ function HomeCompo1() {
   };
 
     return(
-        <div id="container"
-        onMouseMove={handleMouseMove} className="relative group bg-[#292F36] flex gap-10 h-auto 2xl:h-screen w-full   md:px-40 " >
+        <div 
+        className=" relative group bg-[#292F36] flex justify-center items-center gap-10 h-auto 2xl:h-screen w-full   md:px-40 " >
           <div
             className="absolute   inset-0  opacity-0 group-hover:opacity-100 rounded-lg"
             style={{
@@ -57,7 +58,7 @@ function HomeCompo1() {
                   direction="down"
                   
                 /></div>
-            <div>
+            <div className='container'>
             <h1 className="hidden 2xl:block text-9xl text-[#98FAEC] text-center mb-8">Developer</h1>
             <div className='flex flex-col items-center 2xl:flex-row'>
             <div className="bg-[#292F36] mono border-8 rounded-tl-[50%] rounded-br-[50%] h-full text-white w-fit px-12  py-12 2xl:px-16 2xl:py-16 flex flex-col items-center"> 
@@ -69,8 +70,8 @@ function HomeCompo1() {
             height={200} 
             />
             <h2 className="text-2xl font-bold mb-2">Fazal</h2>
-            <p className="text-sm mb-4">Full-stack Developer</p>
-
+            {/* <p className="text-sm mb-4">Full-stack Developer</p> */}
+             
             <div className="flex flex-col space-y-2">
               <div className="flex items-center gap-2">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -125,15 +126,22 @@ function HomeCompo1() {
 
                   </button>
                 </div>
-                <div className="cont-2 px-10 flex flex-col 2xl:flex-row gap-10 2xl:gap-0">
+                <div className="cont-2 px-10 flex flex-col items-start 2xl:flex-row gap-10 2xl:gap-0">
                     <div className="cont-2-1 py-20">
                         <div className='relative'>
                             <p className='text-[#12F7D6] text-sm relative top-[-10px] left-[-10px]'>{'<h1>'}</p>
                             <h1 className='text-6xl '>Hey</h1>
                             <h1 className='text-6xl '>I'm <span className='text-[#12F7D6]'>Fazal</span>,</h1>
-                            <h1 className='text-6xl  relative'>Full Stack Developer <span className='text-[#12F7D6] text-sm relative  right-[-10px]'>{'</h1>'}</span> </h1>
+                            <span className=' sm:hidden relative text-[#12F7D6] left-6 bottom-[-30px]'>{'</h1>'}</span>
+
+                            <StaggeredLetter className='hidden sm-block
+                            ' text='Full-stack Developer' >
+
+                              <span className='relative text-[#12F7D6] left-6 bottom-[-30px]'>{'</h1>'}</span>
+                          </StaggeredLetter>
+                        
                         </div>
-                        <div className='relative'>
+                        <div className='relative mt-10'>
                             <p className='text-[#12F7D6] text-sm relative top-[-10px] left-[-10px]'>{'<p>'}</p>
                             <p className='text-base mono'>I help business grow by crafting amazing web experiences. If you’re looking for a developer that likes to get stuff done,</p>
                          <span className='text-[#12F7D6] text-sm relative  left-[-10px] '>{'</p>'}</span>

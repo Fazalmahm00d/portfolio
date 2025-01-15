@@ -1,6 +1,7 @@
 function HomeCompo5(){
     return(
-        <div className="bg-[#292F36] h-[170vh] 2xl:h-screen flex flex-col justify-center items-center gap-10 xl:px-40">
+        <div className="bg-[#292F36] min-h-screen 2xl:h-screen flex justify-center items-center gap-10 xl:px-40">
+            <div className="container flex flex-col justify-center items-center">
             <div className=" hidden xl:flex flex-col items-center justify-center">
                 <svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_25_645)">
@@ -41,11 +42,12 @@ function HomeCompo5(){
                 
                
             </div>
-            <div className="flex gap-6">
+            <div className="flex gap-6 mt-5">
                     <button className="text-black rounded-3xl bg-[#12F7D6] px-4 py-2">View More</button>
                     <button  className="text-white border-4 rounded-3xl border-[#12F7D6] px-4 py-2">Subscribe</button>
                 </div>
             
+        </div>
         </div>
     )
 }   

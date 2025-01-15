@@ -52,13 +52,12 @@ function HomeCompo4(){
     }, [api])
     const windowWidth = useWindowResize();
     console.log(windowWidth,"window width")
-    const isSmallScreen = windowWidth < 1024; // Tailwind's `sm` breakpoint is typically 640px
-    const isLargeScreen = windowWidth >= 1024;
+    
     return(
-        <div className=" min-h-screen 2xl:h-screen bg-[#1A1E23] relative flex overflow-hidden">
-         <img src="/bgimage2.png" className=" relative top-0 h-full w-fit"/>
+        <div className=" min-h-screen 2xl:h-screen bg-[#1A1E23] relative flex justify-center items-center overflow-hidden ">
          <img src="/bgimage2.png" className=" relative top-0 h-full"/>
-         <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center">
+         <img src="/bgimage2.png" className=" relative top-0 h-full"/>
+         <div className="absolute container top-0 w-full min-h-screen flex flex-col items-center justify-center">
          <div className="hidden 2xl:flex flex-col items-center justify-center">
                 <svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_25_645)">
@@ -78,43 +77,34 @@ function HomeCompo4(){
                 <h1 className="text-[#12F7D6]  text-6xl border-b-4 border-[#12F7D6] py-4">Works</h1>
                 <p className="mono mt-2 ">I had the pleasure of working with these awesome projects</p>
             </div>
-            <div className=" ">
+            <div className="h-full ">
             <Carousel
             opts={{
                 align: "start",
                 loop: true,
             }}
-            className=" w-[250px] md:w-[600px] 2xl:w-[900px] h-full "
+            className="max-w-sm h-[500px] lg:max-w-lg "
             >
-        <CarouselContent className="h-full">
-                <CarouselItem className="relative w-full h-auto">
-                  <img src="/container.png" className="w-full h-auto object-contain" />
-                  <div className="mono text-2xl border-b-4 p-8  border-white w-full"> 
-                    <Modal   details={proj1details}/>
-                    
-                  </div>
+        <CarouselContent className="h-[500px] w-fit lg:w-full">
+                <CarouselItem className="relative w-fit lg:w-full h-[500px]">
+                  <img src="/container.png" className="w-fit h-[500px] object-contain object-contain" />
+                  <Modal   details={proj1details}/>
+                 
                 </CarouselItem>
-                <CarouselItem className="relative  w-full h-auto" >
+                <CarouselItem className="relative  w-fit lg:w-full h-[500px] lg:h-auto  object-contain" >
                 <img
                   src="/container.png"
-                  className="w-full h-auto object-contain"
+                  className="w-full h-[500px] object-contain"
                   alt="Responsive Image"
                 />
-                  <div className="  mono text-2xl border-b-4 border-white"> 
+                  <Modal details={proj2details}/>
     
-                    {isSmallScreen ? (
-                      <Modal modalSize="sm"  details={proj2details}/>
-                    ) : isLargeScreen ? (
-                      <Modal modalSize="lg"  details={proj2details}/>
-                    ) : (
-                      <Modal details={proj2details}/>
-                    )}
-                  </div>
+                   
                 </CarouselItem>
                    
         </CarouselContent>
-        <CarouselPrevious className="w-6 h-6 md:w-16 md:h-16" />
-        <CarouselNext className="w-6 h-6  md:w-16 md:h-16"/>
+        <CarouselPrevious className="w-16 h-16" />
+        <CarouselNext className="w-16 h-16"/>
           </Carousel>
 
         </div>

@@ -1,13 +1,13 @@
 function HomeCompo2() {
     return (
-        <div className="bg-[#1A1E23] h-auto xl:h-screen overflow-hidden">
-            <div className="relative w-full h-[150vh] md:h-[200vw]">
+        <div className="bg-[#1A1E23] h-auto xl:h-screen w-full overflow-hidden">
+            <div className="relative flex items-center justify-center w-full min-h-screen">
                 <img
                     src="/topography.png"
                     className="absolute z-20 inset-0 w-full h-full object-cover opacity-10"
                 />
                
-                <div className="absolute z-40 top-0 left-0 w-full min-h-screen flex flex-col   items-center justify-center text-white px-4 py-10 xl:px-40">
+                <div className="container relative z-40 top-0 left-0 min-h-screen w-full flex flex-col items-center justify-center text-white px-4 py-10 xl:px-40 overflow-y-auto">
                     <div className="hidden xl:flex flex-col items-center gap-10 xl:gap-20 justify-center">
                         <svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clipPath="url(#clip0_25_645)">
@@ -49,7 +49,7 @@ function HomeCompo2() {
                             </div>
                         </div>
                         <div>
-                            <img src="/Image.png" className="h-auto w-full object-contain" />
+                            <img src="/Image.png" className="h-auto lg:h-full w-full object-contain" />
                         </div>
                     </div>
                 </div>
